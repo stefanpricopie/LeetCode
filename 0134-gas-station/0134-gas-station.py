@@ -9,7 +9,6 @@ class Solution(object):
         if sum(cost) > sum(gas):
             return -1
         
-        
         l = len(gas)
 
         total = 0
@@ -17,7 +16,6 @@ class Solution(object):
         start = 0
         end = 0
         stations = 0
-        solution = -1
         increment = True
 
         while start < l:
@@ -29,8 +27,7 @@ class Solution(object):
             if total >= 0:
                 # check if circuit complete
                 if stations == l:
-                    solution = start
-                    break
+                    return start
 
                 # increment end, ensure index range
                 end = (end+1)%l
@@ -53,5 +50,4 @@ class Solution(object):
                     # end was already added
                     increment = False
 
-        
-        return solution
+        return -1
