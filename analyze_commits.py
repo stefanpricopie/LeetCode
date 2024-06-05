@@ -63,11 +63,11 @@ def create_and_save_plot(data, save=True):
             scaleanchor="x", 
             scaleratio=1, 
             range=[0, 105],
-            title='Beats (%) on Space'  # Set y-axis label
+            title='Beats %Users on Space'  # Set y-axis label
         ),
         xaxis=dict(
             range=[0, 100],
-            title='Beats (%) on Time'  # Set x-axis label
+            title='Beats %Users on Time'  # Set x-axis label
         ),
         width=600,  # Set figure width to enforce a square layout
         height=600  # Set figure height to enforce a square layout
