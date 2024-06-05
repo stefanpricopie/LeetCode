@@ -73,7 +73,8 @@ def create_and_save_plot(data, save=True):
         height=600  # Set figure height to enforce a square layout
     )
     if save:
-        fig.write_html("algorithm_performance.html")
+        fig.write_html("algorithm_performance.html", include_plotlyjs='cdn')
+        fig.write_image("algorithm_performance.png", scale=2)
     return fig
 
 # Main function
