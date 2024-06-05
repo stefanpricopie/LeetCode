@@ -29,7 +29,7 @@ jobs:
           pip install plotly pandas kaleido
 
       - name: Generate algorithm performance plot
-        run: python generate_plot.py
+        run: python analyze_commits.py
 
       - name: Commit and push changes
         run: |
