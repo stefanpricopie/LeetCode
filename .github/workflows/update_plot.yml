@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install plotly pandas kaleido
+          pip install plotly pandas kaleido requests
 
       - name: Generate algorithm performance plot
         run: python analyze_commits.py
