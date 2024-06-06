@@ -26,6 +26,10 @@ jobs:
     - name: Run script to update plot
       run: |
         # Your script to update the plot
+        # Ensure this script actually makes changes to the repository
+
+    - name: Check for changes before commit
+      run: git status
 
     - name: Commit and push changes
       env:
@@ -34,5 +38,10 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add -A
+        git status # Check status after adding changes
+        if git diff-index --quiet HEAD; then
+          echo "No changes to commit"
+          exit 0
+        fi
         git commit -m "Update algorithm performance plot"
         git push https://github-actions:${{ secrets.ACTIONS_PAT }}@github.com/stefanpricopie/LeetCode.git HEAD:main
