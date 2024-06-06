@@ -27,6 +27,7 @@ jobs:
       run: |
         # Your script to update the plot
         # Ensure this script actually makes changes to the repository
+        python analyze_commits.py
 
     - name: Check for changes before commit
       run: git status
