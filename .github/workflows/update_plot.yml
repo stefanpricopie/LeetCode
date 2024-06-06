@@ -26,7 +26,7 @@ jobs:
     - name: Run script to update plot
       run: |
         # Your script to update the plot
-        # Ensure this script actually makes changes to the repository
+        # Ensure this script actually makes changes to the repository 
         python analyze_commits.py
 
     - name: Check for changes before commit
