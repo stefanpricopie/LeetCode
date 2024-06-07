@@ -25,8 +25,7 @@ jobs:
 
     - name: Run script to update plot
       run: |
-        # Your script to update the plot
-        # Ensure this script actually makes changes to the repository 
+        echo "Running the plot update script"
         python analyze_commits.py
 
     - name: Check for changes before commit
@@ -45,4 +44,14 @@ jobs:
           exit 0
         fi
         git commit -m "Update algorithm performance plot"
+
+    - name: Pull latest changes from main
+      run: |
+        git pull --rebase origin main
+
+    - name: Push changes
+      env:
+        ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
+      run: |
+        echo "Pushing changes"
         git push https://github-actions:${{ secrets.ACTIONS_PAT }}@github.com/stefanpricopie/LeetCode.git HEAD:main
