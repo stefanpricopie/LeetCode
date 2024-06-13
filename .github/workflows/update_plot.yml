@@ -45,11 +45,15 @@ jobs:
         fi
         git commit -m "Update algorithm performance plot"
 
-    - name: Pull latest changes from main
-      run: |
-        git pull --rebase origin main
+    - name: Rebase Branch
+      uses: martincostello/rebaser@v2.0.0
+      with:
+        branch: 'main'
+      env:
+        ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
 
     - name: Push changes
+      if: success()
       env:
         ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
       run: |
