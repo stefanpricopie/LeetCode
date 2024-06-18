@@ -8,11 +8,12 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        idx_right = bisect(list(chain(*matrix)), target)
+        flat_matrix = list(chain(*matrix))
+        idx_right = bisect(flat_matrix, target)
 
         # corner case
         if idx_right == 0:
             return False
         
-        exists = list(chain(*matrix))[idx_right-1] == target
+        exists = flat_matrix[idx_right-1] == target
         return exists
