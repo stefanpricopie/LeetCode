@@ -1,5 +1,5 @@
-import bisect
-import itertools
+from bisect import bisect
+from itertools import chain
 
 class Solution(object):
     def searchMatrix(self, matrix, target):
@@ -8,11 +8,11 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        idx_right = bisect.bisect(list(itertools.chain(*matrix)), target)
+        idx_right = bisect(list(chain(*matrix)), target)
 
         # corner case
         if idx_right == 0:
             return False
         
-        exists = list(itertools.chain(*matrix))[idx_right-1] == target
+        exists = list(chain(*matrix))[idx_right-1] == target
         return exists
