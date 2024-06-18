@@ -30,12 +30,18 @@ jobs:
     - name: Check for changes before commit
       run: git status
 
-    - name: Commit and push changes
+    - name: Pull latest changes and rebase
       env:
         ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
+        git pull --rebase origin main
+
+    - name: Commit and push changes to main
+      env:
+        ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
+      run: |
         git add -A
         git status # Check status after adding changes
         if git diff-index --quiet HEAD; then
@@ -43,17 +49,12 @@ jobs:
           exit 0
         fi
         git commit -m "Update algorithm performance plot"
-
-    - name: Pull latest changes
-      env:
-        ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
-      run: |
-        git pull --rebase origin main
-
-    - name: Push changes
-      if: success()
-      env:
-        ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
-      run: |
-        echo "Pushing changes"
         git push https://github-actions:${{ secrets.ACTIONS_PAT }}@github.com/stefanpricopie/LeetCode.git HEAD:main
+
+    - name: Deploy to GitHub Pages
+      if: success()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./  # Assuming updated plot is saved in the root directory
