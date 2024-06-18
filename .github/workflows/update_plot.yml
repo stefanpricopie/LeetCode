@@ -1,9 +1,8 @@
 name: Update Algorithm Performance Plot
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 0 * * 0'  # Runs at 00:00 UTC every Sunday
 
 jobs:
   update-plot:
