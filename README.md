@@ -9,3 +9,14 @@ The plot below shows the performance of various algorithms based on the time and
 ![Algorithm Performance](algorithm_performance.png)
 
 For the interactive version, [click here](https://stefanpricopie.github.io/LeetCode/algorithm_performance.html).
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+|  |
+| ------- |
+| [0056-merge-intervals](https://github.com/stefanpricopie/LeetCode/tree/master/0056-merge-intervals) |
+## Sorting
+|  |
+| ------- |
+| [0056-merge-intervals](https://github.com/stefanpricopie/LeetCode/tree/master/0056-merge-intervals) |
+<!---LeetCode Topics End-->
