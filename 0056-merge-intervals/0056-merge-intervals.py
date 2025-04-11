@@ -4,23 +4,21 @@ class Solution(object):
         :type intervals: List[List[int]]
         :rtype: List[List[int]]
         """
-        heapq.heapify(intervals)
+        if not intervals:
+            return []
 
-        merged = []
-        a = b = None
+        # Step 1: Sort intervals by the start time
+        intervals.sort(key=lambda x: x[0])
 
-        while intervals:
-            if a is None:
-                a, b = heapq.heappop(intervals)
+        merged = [intervals[0]]
+
+        for current in intervals[1:]:
+            prev = merged[-1]
+
+            # If current overlaps with previous, merge them
+            if current[0] <= prev[1]:
+                prev[1] = max(prev[1], current[1])
             else:
-                c, d = heapq.heappop(intervals)
-                if c > b:
-                    merged.append([a,b])
-                    a, b = c, d
-                else:
-                    b = max(b,d)
-        
-        if a is not None:
-            merged.append([a,b])
-        
+                merged.append(current)
+
         return merged
