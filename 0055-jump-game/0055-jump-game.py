@@ -4,11 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        maxReach = 0
+        max_reach = 0
         for i, jump in enumerate(nums):
-            if maxReach < i:
+            if i > max_reach:
                 return False
-            maxReach = max(maxReach, i + jump)
-            if maxReach >= len(nums) - 1:
-                return True
-        return maxReach >= len(nums) - 1
+            max_reach = max(max_reach, i + jump)
+        return True
