@@ -20,6 +20,7 @@ For the interactive version, [click here](https://stefanpricopie.github.io/LeetC
 |  |
 | ------- |
 | [0056-merge-intervals](https://github.com/stefanpricopie/LeetCode/tree/master/0056-merge-intervals) |
+| [0148-sort-list](https://github.com/stefanpricopie/LeetCode/tree/master/0148-sort-list) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -28,4 +29,20 @@ For the interactive version, [click here](https://stefanpricopie.github.io/LeetC
 |  |
 | ------- |
 | [0055-jump-game](https://github.com/stefanpricopie/LeetCode/tree/master/0055-jump-game) |
+## Linked List
+|  |
+| ------- |
+| [0148-sort-list](https://github.com/stefanpricopie/LeetCode/tree/master/0148-sort-list) |
+## Two Pointers
+|  |
+| ------- |
+| [0148-sort-list](https://github.com/stefanpricopie/LeetCode/tree/master/0148-sort-list) |
+## Divide and Conquer
+|  |
+| ------- |
+| [0148-sort-list](https://github.com/stefanpricopie/LeetCode/tree/master/0148-sort-list) |
+## Merge Sort
+|  |
+| ------- |
+| [0148-sort-list](https://github.com/stefanpricopie/LeetCode/tree/master/0148-sort-list) |
 <!---LeetCode Topics End-->
