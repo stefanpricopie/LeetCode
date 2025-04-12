@@ -41,8 +41,13 @@ For the interactive version, [click here](https://stefanpricopie.github.io/LeetC
 |  |
 | ------- |
 | [0148-sort-list](https://github.com/stefanpricopie/LeetCode/tree/master/0148-sort-list) |
+| [0191-number-of-1-bits](https://github.com/stefanpricopie/LeetCode/tree/master/0191-number-of-1-bits) |
 ## Merge Sort
 |  |
 | ------- |
 | [0148-sort-list](https://github.com/stefanpricopie/LeetCode/tree/master/0148-sort-list) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0191-number-of-1-bits](https://github.com/stefanpricopie/LeetCode/tree/master/0191-number-of-1-bits) |
 <!---LeetCode Topics End-->
