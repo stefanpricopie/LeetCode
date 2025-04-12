@@ -9,24 +9,35 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        if not head:
-            return None
+        if not head or not head.next:
+            return head
 
-        # Step 1: Extract values into a list
-        vals = []
-        current = head
-        while current:
-            vals.append(current.val)
-            current = current.next
+        # Step 1: Find the middle
+        slow, fast = head, head.next
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
 
-        # Step 2: Sort the list
-        vals.sort()
+        mid = slow.next
+        slow.next = None
 
-        # Step 3: Rebuild the linked list
+        # Step 2: Recursively sort both halves
+        left = self.sortList(head)
+        right = self.sortList(mid)
+
+        # Step 3: Merge the sorted halves
         dummy = ListNode()
-        current = dummy
-        for val in vals:
-            current.next = ListNode(val)
-            current = current.next
+        tail = dummy
+
+        while left and right:
+            if left.val < right.val:
+                tail.next = left
+                left = left.next
+            else:
+                tail.next = right
+                right = right.next
+            tail = tail.next
+
+        tail.next = left or right
 
         return dummy.next
