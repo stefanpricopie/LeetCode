@@ -14,9 +14,18 @@ For the interactive version, [click here](https://stefanpricopie.github.io/LeetC
 ## Array
 |  |
 | ------- |
+| [0055-jump-game](https://github.com/stefanpricopie/LeetCode/tree/master/0055-jump-game) |
 | [0056-merge-intervals](https://github.com/stefanpricopie/LeetCode/tree/master/0056-merge-intervals) |
 ## Sorting
 |  |
 | ------- |
 | [0056-merge-intervals](https://github.com/stefanpricopie/LeetCode/tree/master/0056-merge-intervals) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0055-jump-game](https://github.com/stefanpricopie/LeetCode/tree/master/0055-jump-game) |
+## Greedy
+|  |
+| ------- |
+| [0055-jump-game](https://github.com/stefanpricopie/LeetCode/tree/master/0055-jump-game) |
 <!---LeetCode Topics End-->
