@@ -4,11 +4,8 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n == 0:
-            return 0
-        
-        power_2 = 1
-        while 2 * power_2 < n:
-            power_2 *= 2
-        
-        return 1 + self.hammingWeight(n % power_2)
+        count = 0
+        while n:
+            n &= n - 1  # flip the least significant 1-bit to 0
+            count += 1
+        return count
